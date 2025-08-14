@@ -5,6 +5,9 @@
 !.gitignore
 !.gitattributes
 
+# Allow APK files for distribution
+!*.apk
+
 # Allow Unity essentials
 !/Assets
 !/Assets/**
