@@ -1,7 +1,17 @@
-# Mobile Touch Fix for WhackAMole
+# 🐭 WhackAMole - Unity Mobile Game
 
-## Problem
-Mobile touch input was not working in the WhackAMole game.
+A fun and engaging WhackAMole game built with Unity, optimized for mobile devices with touch input support.
+
+## 🎮 Game Features
+- **Touch-Optimized**: Full mobile touch support with responsive controls
+- **Dynamic Gameplay**: Mice spawn from different screen edges with varying speeds
+- **Score System**: Earn points by hitting mice, lose time for misses
+- **Mobile UI**: Large, readable text and buttons optimized for mobile screens
+- **Audio Feedback**: Sound effects for hits, misses, and game events
+
+## 📱 Mobile Touch Fix
+
+This project includes comprehensive fixes for mobile touch input issues in Unity games.
 
 ## Root Cause
 The original `ClickScript.cs` was not properly using the Unity Input System. It was trying to access touch input directly instead of using the configured Input Actions.
