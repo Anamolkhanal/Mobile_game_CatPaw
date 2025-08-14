@@ -4,6 +4,8 @@
 # Keep git config files
 !.gitignore
 !.gitattributes
+!README.md
+!*.md
 
 # Allow APK files for distribution
 !*.apk
