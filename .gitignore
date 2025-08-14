@@ -5,20 +5,18 @@
 !.gitignore
 !.gitattributes
 
-# Keep Unity project essentials
+# Allow Unity essentials
+!/Assets
 !/Assets/**
+!/Packages
 !/Packages/**
+!/ProjectSettings
 !/ProjectSettings/**
 
 # Still ignore common Unity-generated directories
 /Library/
-/Temp/
-/Obj/
-/Build/
-/Logs/
-/UserSettings/
-
-# (Optional) OS/editor junk — not needed since everything is ignored by default
-# .DS_Store
-# Thumbs.db
-
+ /Temp/
+ /Obj/
+ /Build/
+ /Logs/
+ /UserSettings/
