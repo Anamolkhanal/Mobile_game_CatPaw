@@ -234,15 +234,18 @@ public class GameManager : MonoBehaviour
 			go.transform.SetParent(canvas.transform, false);
 			scoreText = go.GetComponent<Text>();
 			if (font != null) scoreText.font = font;
-			scoreText.fontSize = 20;
+			scoreText.fontSize = 48; // Increased from 20 to 48 for mobile
 			scoreText.fontStyle = FontStyle.Bold;
 			scoreText.color = Color.white;
-			scoreText.alignment = TextAnchor.UpperCenter;
+			scoreText.alignment = TextAnchor.UpperLeft;
+			scoreText.horizontalOverflow = HorizontalWrapMode.Overflow;
+			scoreText.verticalOverflow = VerticalWrapMode.Overflow;
 			var rt = scoreText.rectTransform;
 			rt.anchorMin = new Vector2(0, 1);
 			rt.anchorMax = new Vector2(0, 1);
 			rt.pivot = new Vector2(0, 1);
-			rt.anchoredPosition = new Vector2(50, -50);
+			rt.anchoredPosition = new Vector2(80, -80);
+			rt.sizeDelta = new Vector2(300, 100); // Give it proper size
 		}
 
 		if (timeText == null)
@@ -251,15 +254,18 @@ public class GameManager : MonoBehaviour
 			go.transform.SetParent(canvas.transform, false);
 			timeText = go.GetComponent<Text>();
 			if (font != null) timeText.font = font;
-			timeText.fontSize = 20;
+			timeText.fontSize = 48; // Increased from 20 to 48 for mobile
 			timeText.fontStyle = FontStyle.Bold;
 			timeText.color = Color.white;
-			timeText.alignment = TextAnchor.UpperCenter;
+			timeText.alignment = TextAnchor.UpperRight;
+			timeText.horizontalOverflow = HorizontalWrapMode.Overflow;
+			timeText.verticalOverflow = VerticalWrapMode.Overflow;
 			var rt = timeText.rectTransform;
 			rt.anchorMin = new Vector2(1, 1);
 			rt.anchorMax = new Vector2(1, 1);
 			rt.pivot = new Vector2(1, 1);
-			rt.anchoredPosition = new Vector2(-50, -50);
+			rt.anchoredPosition = new Vector2(-80, -80);
+			rt.sizeDelta = new Vector2(300, 100); // Give it proper size
     }
 
 		// Create a simple Game Over overlay if not provided
@@ -281,18 +287,19 @@ public class GameManager : MonoBehaviour
 			textGo.transform.SetParent(panelGo.transform, false);
 			finalScoreText = textGo.GetComponent<Text>();
 			if (font != null) finalScoreText.font = font;
-			finalScoreText.fontSize = 20;
+			finalScoreText.fontSize = 72; // Increased from 20 to 72 for mobile
 			finalScoreText.fontStyle = FontStyle.Bold;
 			finalScoreText.color = Color.white;
             finalScoreText.alignment = TextAnchor.MiddleCenter;
             finalScoreText.horizontalOverflow = HorizontalWrapMode.Wrap;
             finalScoreText.verticalOverflow = VerticalWrapMode.Overflow;
-            finalScoreText.lineSpacing = 1.0f;
+            finalScoreText.lineSpacing = 1.2f; // Increased line spacing for better readability
 			var trt = finalScoreText.rectTransform;
 			trt.anchorMin = new Vector2(0.5f, 0.5f);
 			trt.anchorMax = new Vector2(0.5f, 0.5f);
 			trt.pivot = new Vector2(0.5f, 0.5f);
-			trt.anchoredPosition = Vector2.zero;
+			trt.anchoredPosition = new Vector2(0, 50); // Move up a bit
+			trt.sizeDelta = new Vector2(800, 200); // Give it proper size
 			finalScoreText.text = "";
 
 			// Create Play Again button
@@ -305,8 +312,8 @@ public class GameManager : MonoBehaviour
 			brt.anchorMin = new Vector2(0.5f, 0.5f);
 			brt.anchorMax = new Vector2(0.5f, 0.5f);
 			brt.pivot = new Vector2(0.5f, 0.5f);
-			brt.anchoredPosition = new Vector2(0, -150);
-			brt.sizeDelta = new Vector2(220, 60);
+			brt.anchoredPosition = new Vector2(0, -200); // Moved down for larger text
+			brt.sizeDelta = new Vector2(400, 100); // Increased from 220x60 to 400x100
 			playAgainButton.onClick.RemoveAllListeners();
 			playAgainButton.onClick.AddListener(RestartGame);
 
@@ -315,10 +322,12 @@ public class GameManager : MonoBehaviour
 			var btnText = btnTextGo.GetComponent<Text>();
 			if (font != null) btnText.font = font;
 			btnText.text = "Play Again";
-			btnText.fontSize = 20;
+			btnText.fontSize = 48; // Increased from 20 to 48 for mobile
 			btnText.fontStyle = FontStyle.Bold;
 			btnText.alignment = TextAnchor.MiddleCenter;
 			btnText.color = Color.white;
+			btnText.horizontalOverflow = HorizontalWrapMode.Overflow;
+			btnText.verticalOverflow = VerticalWrapMode.Overflow;
 			var btrt = btnText.rectTransform;
 			btrt.anchorMin = new Vector2(0, 0);
 			btrt.anchorMax = new Vector2(1, 1);
