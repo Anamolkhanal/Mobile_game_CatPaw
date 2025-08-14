@@ -1,0 +1,24 @@
+# Ignore everything by default
+/*
+
+# Keep git config files
+!.gitignore
+!.gitattributes
+
+# Keep Unity project essentials
+!/Assets/**
+!/Packages/**
+!/ProjectSettings/**
+
+# Still ignore common Unity-generated directories
+/Library/
+/Temp/
+/Obj/
+/Build/
+/Logs/
+/UserSettings/
+
+# (Optional) OS/editor junk — not needed since everything is ignored by default
+# .DS_Store
+# Thumbs.db
+
